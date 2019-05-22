@@ -1,0 +1,222 @@
+/* 
+	red - #CC2419
+	dark blue - #144F4F
+	light blue - #1B8986
+	
+ */
+*, ::after, ::before {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+body {
+	font-size: 16px;
+}
+h2 {
+	font-size: 2rem;
+}
+input {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.hover:hover {
+	cursor: pointer;
+}
+.ided-page-container {
+	overflow-x: hidden;
+	width: 100%;
+}
+#ided-sidenav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 275px;
+	transform: translateX(-275px);
+	transition: transform .25s ease;
+	background: #333333;
+	padding: 10px 0px;
+	z-index: 4;
+}
+#ided-sidenav.active {
+	transform: translateX(0);
+}
+#ided-sidenav a {
+	color: white;
+	font-size: 16px;
+}
+#ided-sidenav a > span {
+	position: relative;
+}
+#ided-sidenav .submenu-toggle::after {
+	border-color: white transparent transparent;
+}
+.ided-content {
+	transition: transform .25s ease;
+}
+.ided-content.inactive {
+	transform: translateX(275px);
+}
+#ided-overlay {
+	background: rgba(0,0,0,0.25);
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 3;
+	transition: all 0.25s;
+	opacity: 0;
+	height: 100vh;
+	width: 100%;
+	visibility: hidden;
+}
+#ided-overlay.active {
+	visibility: visible;
+	opacity: 1;
+}
+#ided-header {
+	padding:10px;
+	position: relative;
+	-webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.2);
+	box-shadow: 0 8px 6px -6px rgba(0,0,0,0.2);
+}
+.header-nav {
+	position: absolute;
+	right:60px;
+	top:50%;
+	transform:translateY(-50%);
+}
+.header-nav a {
+	color: #404040;
+	color: black;
+	margin: 0px 10px;
+	display: inline-block;
+	font-size: 14px;
+	position: relative;
+}
+.header-nav a.button, .header-nav a.button:hover {
+	background: none;
+	border: 3px solid #404040;
+	color: #404040;
+	border: 3px solid #1B8986;
+	color: #1B8986;
+	color: white;
+	border: none;
+	background: #1B8986;
+	font-weight: bold;
+	min-width: 100px;
+}
+.animated-anchor {
+	position: relative;
+}
+.header-nav a:not(.button):before, #ided-sidenav li > a > span:before, .animated-anchor:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #CC2419;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  transition: all 0.15s ease-in-out 0s;
+}
+#ided-sidenav li > a > span:before  {
+	background-color: #ffffff;
+}
+.header-nav a:hover:before, #ided-sidenav li > a:hover > span:before, .animated-anchor:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+.ided-menu-button-container {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 10px;
+}
+.bkg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.section {
+	padding: 20px 10px;
+}
+#home-what-we-do .item {
+	margin-top: 40px;
+}
+#typewriter {
+	color: #ffffff;
+	font-size: 4rem;
+}
+.social-media-icons a {
+	display: inline-block;
+    background: #CC2419;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    color: white;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+    margin: 0px 3px;
+}
+.social-media-icons a:first-child {
+	margin-left: 0px;
+}
+#ided-footer input {
+	background: #e6e6e6;
+	color: #666666;
+}
+#ided-footer input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #999999;
+}
+#ided-footer input::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+#ided-footer input:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+}
+#ided-footer input:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+}
+#ided-footer input::placeholder {
+	color: #999999;
+}
+@media only screen and (min-width: 640px) {
+	.bkg.parallax {
+		background-attachment: fixed;
+	}	
+}
+
+@media only screen and (max-width: 640px) {
+	.small-text-center {
+		text-align: center;
+	}
+	.small-margin-center {
+		margin: 0px auto;
+	}
+	#home-what-we-do .item {
+		margin-top: 15px;
+	}
+	#typewriter {
+		font-size: 2.5rem;
+	}
+}
+
+@-webkit-keyframes upDown {
+    0%, 76%, 100% { transform: translateY(0); }
+    80%, 96% { transform: translateY(-4px); }
+    84%, 92% { transform: translateY(-8px); }
+    88% { transform: translateY(-12px); }
+}
+@keyframes upDown {
+    0%, 76%, 100% { transform: translateY(0); }
+    80%, 96% { transform: translateY(-4px); }
+    84%, 92% { transform: translateY(-8px); }
+    88% { transform: translateY(-12px); }
+}
