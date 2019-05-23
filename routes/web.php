@@ -18,3 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/incubator', 'IncubatorController@show_home');
+
+Route::get('/more-test', function(){
+	return "<h1>proof of concept</h1>";
+	});
